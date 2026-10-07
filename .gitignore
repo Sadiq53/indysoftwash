@@ -1,0 +1,57 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+jspm_packages/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build, test, and caching directories
+dist/
+build/
+coverage/
+.next/
+out/
+.cache/
+.eslintcache
+
+# Environment variables (Critical for security)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Server-specific and local files
+server/uploads/
+uploads/
+*.pem
+
+# Optional npm cache error logs
+.npm/
+
+# Frameworks / Tooling
+.pnp
+.pnp.js

@@ -416,12 +416,17 @@ route.post('/', upload.any(), async (req, res) => {
             </html>`;
 
         // Send email
-        await transporter.sendMail({
-            from: `<${process.env.BREVO_SENDER_MAIL}>`,
-            to: email,
-            subject: `Your Proposal is Ready – Let's Move Forward!`,
-            html: htmlContent
-        });
+        try {
+            await transporter.sendMail({
+                from: `<${process.env.BREVO_SENDER_MAIL}>`,
+                to: email,
+                subject: `Your Proposal is Ready – Let's Move Forward!`,
+                html: htmlContent
+            });
+            console.log("Proposal email sent successfully.");
+        } catch (emailError) {
+            console.error("Failed to send proposal email:", emailError.message);
+        }
 
         res.status(200).send({
             message: 'Service and Proposal added successfully',
